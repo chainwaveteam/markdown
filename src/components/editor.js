@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx } from 'theme-ui'
+import PropTypes from 'prop-types'
 
-function Editor({ placeholder = 'Lorem ipsum...', handleChange }) {
+function Editor({ placeholder, handleChange }) {
   return (
     <>
       <textarea
@@ -14,6 +15,15 @@ function Editor({ placeholder = 'Lorem ipsum...', handleChange }) {
       />
     </>
   )
+}
+
+Editor.propTypes = {
+  placeholder: PropTypes.string,
+  handleChange: PropTypes.func.isRequired
+}
+
+Editor.defaultProps = {
+  placeholder: 'Lorem ipsum...'
 }
 
 export default Editor
