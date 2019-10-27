@@ -1,10 +1,9 @@
 import React from 'react'
-import { Box, Heading } from 'rebass'
 import { ThemeProvider } from 'theme-ui'
 import { Helmet } from 'react-helmet'
 
 import theme from './theme'
-import Playground from './components/playground'
+import Playground from './playground'
 
 // Tests with freeCodeCamp
 const isDev = process.env.NODE_ENV !== 'production'
@@ -18,19 +17,7 @@ function App() {
           <script type="text/javascript" src={fccCdn} />
         </Helmet>
       )}
-      <Box
-        sx={{
-          bg: 'background',
-          color: 'text',
-          height: `100vh`,
-          width: `100vw`
-        }}
-      >
-        <Heading textAlign="center" py="6" fontSize="6">
-          Markdown previewer
-        </Heading>
-        <Playground />
-      </Box>
+      <Playground />
     </ThemeProvider>
   )
 }
